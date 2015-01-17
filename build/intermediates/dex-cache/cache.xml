@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/martinpage/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/martinpage/Documents/workspace/ParticleWeb/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-592563e1b94507e3a0e426ce53acfcbc3ce3994d.jar" />
+    </item>
+    <item
+        jar="/Users/martinpage/Documents/workspace/ParticleWeb/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/martinpage/Documents/workspace/ParticleWeb/app/build/intermediates/pre-dexed/debug/classes-c842c5027b73a53bab7f11f3447de3d72248d8b0.jar" />
+    </item>
+    <item
+        jar="/Users/martinpage/Documents/workspace/ParticleWeb/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/martinpage/Documents/workspace/ParticleWeb/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-96a2c29c96429d7b6770947fd32ada27ddfca11b.jar" />
+    </item>
+    <item
+        jar="/Users/martinpage/Documents/workspace/ParticleWeb/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/martinpage/Documents/workspace/ParticleWeb/app/build/intermediates/pre-dexed/debug/classes-67af72e3e2a5e26ff2d2e969e11b874880d8a72a.jar" />
+    </item>
+
+</items>

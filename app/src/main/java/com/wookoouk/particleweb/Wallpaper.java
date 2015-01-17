@@ -21,9 +21,6 @@ public class Wallpaper extends WallpaperService {
     public class ParticleWebEngine extends Engine {
         private final Handler handler = new Handler();
 
-
-//        Point userPoint;
-
         private final Runnable drawRunner = new Runnable() {
             @Override
             public void run() {
@@ -76,25 +73,6 @@ public class Wallpaper extends WallpaperService {
             this.height = height;
             maxLineDist = width / 5;
             super.onSurfaceChanged(holder, format, width, height);
-        }
-
-        @Override
-        public void onTouchEvent(MotionEvent event) {
-
-//            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-//                userPoint = new Point(event.getX(), event.getY());
-//            }
-//            if (event.getAction() == MotionEvent.ACTION_MOVE) {
-//                if (userPoint != null) {
-//                    userPoint.setPosition(event.getX(), event.getY());
-//                }
-//            }
-//            if (event.getAction() == MotionEvent.ACTION_UP) {
-//                userPoint = null;
-//            }
-
-
-            super.onTouchEvent(event);
         }
 
         private void draw() {
@@ -154,15 +132,10 @@ public class Wallpaper extends WallpaperService {
         }
 
         public void drawPoint(Point point) {
-            canvas.drawCircle(point.x, point.y, 8f, paint);
+            canvas.drawCircle(point.x, point.y, 6f, paint);
         }
 
         public void drawLines() {
-
-
-//            if (userPoint != null) {
-//                drawPoint(userPoint);
-//            }
 
             for (Point p : points) {
                 for (Point p2 : points) {
@@ -173,12 +146,6 @@ public class Wallpaper extends WallpaperService {
                         }
                     }
                 }
-//                if (userPoint != null) {
-//                    float distance = (float) lineDistance(p, userPoint);
-//                    if (distance < maxLineDist) {
-//                        drawLine(p, userPoint, distance);
-//                    }
-//                }
             }
         }
 

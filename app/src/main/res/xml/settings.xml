@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Background" >
+        <ListPreference
+            android:dialogTitle="Background color"
+            android:entries="@array/colors"
+            android:entryValues="@array/colorsValues"
+            android:key="bgColor"
+            android:summary="Choose a background colour..."
+            android:title="Background Colour"
+            android:textAllCaps="true">
+        </ListPreference>
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory android:title="Particles" >
+        <ListPreference
+            android:dialogTitle="Particle color"
+            android:entries="@array/colors"
+            android:entryValues="@array/colorsValues"
+            android:key="pref_days_before"
+            android:summary="Color of particles"
+            android:title="Particle color"
+            android:textAllCaps="true">
+        </ListPreference>
+        <ListPreference
+            android:dialogTitle="Particle speed"
+            android:entries="@array/speeds"
+            android:entryValues="@array/speeds"
+            android:key="pref_days_before"
+            android:summary="Average speed of particles"
+            android:title="Particle speed"
+            android:textAllCaps="true">
+        </ListPreference>
+        <ListPreference
+            android:dialogTitle="Particle size"
+            android:entries="@array/sizes"
+            android:entryValues="@array/sizes"
+            android:key="pref_days_before"
+            android:summary="Size or particles"
+            android:title="Particle size"
+            android:textAllCaps="true">
+        </ListPreference>
+    </PreferenceCategory>-->
+    </PreferenceScreen>

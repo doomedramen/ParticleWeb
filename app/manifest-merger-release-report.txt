@@ -25,30 +25,46 @@ MERGED from com.android.support:support-v4:21.0.3:16:5
 		ADDED from AndroidManifest.xml:5:9
 	android:theme
 		ADDED from AndroidManifest.xml:5:44
-service#com.wookoouk.particleweb.Wallpaper
+activity#com.wookoouk.particleweb.SettingsActivity
 ADDED from AndroidManifest.xml:7:9
 	android:label
-		ADDED from AndroidManifest.xml:8:13
-	android:permission
 		ADDED from AndroidManifest.xml:9:13
 	android:name
-		ADDED from AndroidManifest.xml:7:18
-intent-filter#android.service.wallpaper.WallpaperService
-ADDED from AndroidManifest.xml:11:13
-action#android.service.wallpaper.WallpaperService
+		ADDED from AndroidManifest.xml:8:13
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:10:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:11:17
+	android:name
+		ADDED from AndroidManifest.xml:11:25
+category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:12:17
 	android:name
-		ADDED from AndroidManifest.xml:12:25
+		ADDED from AndroidManifest.xml:12:27
+service#com.wookoouk.particleweb.Wallpaper
+ADDED from AndroidManifest.xml:17:9
+	android:label
+		ADDED from AndroidManifest.xml:18:13
+	android:permission
+		ADDED from AndroidManifest.xml:19:13
+	android:name
+		ADDED from AndroidManifest.xml:17:18
+intent-filter#android.service.wallpaper.WallpaperService
+ADDED from AndroidManifest.xml:21:13
+action#android.service.wallpaper.WallpaperService
+ADDED from AndroidManifest.xml:22:17
+	android:name
+		ADDED from AndroidManifest.xml:22:25
 meta-data#android.service.wallpaper
-ADDED from AndroidManifest.xml:14:13
+ADDED from AndroidManifest.xml:24:13
 	android:resource
-		ADDED from AndroidManifest.xml:16:17
+		ADDED from AndroidManifest.xml:26:17
 	android:name
-		ADDED from AndroidManifest.xml:15:17
+		ADDED from AndroidManifest.xml:25:17
 uses-feature#android.software.live_wallpaper
-ADDED from AndroidManifest.xml:19:5
+ADDED from AndroidManifest.xml:31:5
 	android:name
-		ADDED from AndroidManifest.xml:19:19
+		ADDED from AndroidManifest.xml:31:19
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5

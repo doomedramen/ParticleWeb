@@ -4,6 +4,16 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
 
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
         <service android:name="com.wookoouk.particleweb.Wallpaper"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_WALLPAPER">
@@ -15,6 +25,8 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/particleweb" />
             </service>
+
+
     </application>
     <uses-feature android:name="android.software.live_wallpaper" />
 </manifest>

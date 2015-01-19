@@ -1,9 +1,13 @@
 package com.wookoouk.particleweb;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -39,6 +43,12 @@ public class Wallpaper extends WallpaperService {
         int lineColor = Color.rgb(236, 240, 241);
         float maxLineDist;
 
+        public void updatePreferences() {
+
+            SharedPreferences preferences = getSharedPreferences("ParticleWeb", MODE_PRIVATE);
+            bgColor = Color.parseColor(preferences.getString("bg", "#9B59B6"));
+        }
+
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
             super.onCreate(surfaceHolder);
@@ -47,6 +57,9 @@ public class Wallpaper extends WallpaperService {
             paint.setAntiAlias(true);
             paint.setColor(lineColor);
             handler.post(drawRunner);
+
+            updatePreferences();
+
         }
 
         @Override
@@ -57,6 +70,7 @@ public class Wallpaper extends WallpaperService {
             } else {
                 handler.removeCallbacks(drawRunner);
             }
+            updatePreferences();
         }
 
         @Override
@@ -72,6 +86,7 @@ public class Wallpaper extends WallpaperService {
             this.width = width;
             this.height = height;
             maxLineDist = width / 5;
+            maxNumber = (width / 50) + (height / 50);
             super.onSurfaceChanged(holder, format, width, height);
         }
 
@@ -154,6 +169,7 @@ public class Wallpaper extends WallpaperService {
             paint.setStrokeJoin(Paint.Join.ROUND);
             float invertedDistance = ((maxLineDist - 0) - distance) / 100;
             paint.setStrokeWidth(invertedDistance);
+
             canvas.drawLine(p.x, p.y, p2.x, p2.y, paint);
         }
 

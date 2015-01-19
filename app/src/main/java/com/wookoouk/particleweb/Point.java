@@ -17,7 +17,7 @@ public class Point {
 
         dx = (random.nextFloat() - random.nextFloat());
         dy = (random.nextFloat() - random.nextFloat());
-        speed = (random.nextFloat() - random.nextFloat() + 1)*3;
+        speed = (random.nextFloat() - random.nextFloat())*8;
     }
 
     public void translate() {

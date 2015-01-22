@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
@@ -39,26 +40,30 @@ public class Wallpaper extends WallpaperService {
         private boolean visible = true;
         private int maxNumber = 50;
         Canvas canvas = null;
-        int bgColor = Color.rgb(231, 76, 60);
-        int lineColor = Color.rgb(236, 240, 241);
+        String defaultBG = "#9B59B6";
+        String defaultPoint = "#F1C40F";
+        int bgColor;
+        int lineColor;
         float maxLineDist;
 
         public void updatePreferences() {
-
-            SharedPreferences preferences = getSharedPreferences("ParticleWeb", MODE_PRIVATE);
-            bgColor = Color.parseColor(preferences.getString("bg", "#9B59B6"));
+            SharedPreferences preferences = getSharedPreferences(SettingsActivity.NAMESPACE, MODE_PRIVATE);
+            bgColor = Color.parseColor(preferences.getString(SettingsActivity.bgColorKey, defaultBG));
+            lineColor = Color.parseColor(preferences.getString(SettingsActivity.pointColorKey, defaultPoint));
+            paint.setColor(lineColor);
         }
 
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
             super.onCreate(surfaceHolder);
+            updatePreferences();
 
             points = new ArrayList<>();
             paint.setAntiAlias(true);
-            paint.setColor(lineColor);
+
+
             handler.post(drawRunner);
 
-            updatePreferences();
 
         }
 
@@ -140,6 +145,7 @@ public class Wallpaper extends WallpaperService {
         }
 
         public void drawPoints() {
+//            Log.e("APP", paint.getColor()+"");
             paint.setStyle(Paint.Style.FILL);
             for (Point point : points) {
                 drawPoint(point);

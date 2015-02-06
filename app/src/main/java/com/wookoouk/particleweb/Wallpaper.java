@@ -42,14 +42,17 @@ public class Wallpaper extends WallpaperService {
         Canvas canvas = null;
         String defaultBG = "#9B59B6";
         String defaultPoint = "#F1C40F";
+        Boolean showPoints;
         int bgColor;
         int lineColor;
         float maxLineDist;
 
         public void updatePreferences() {
-            SharedPreferences preferences = getSharedPreferences(SettingsActivity.NAMESPACE, MODE_PRIVATE);
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             bgColor = Color.parseColor(preferences.getString(SettingsActivity.bgColorKey, defaultBG));
             lineColor = Color.parseColor(preferences.getString(SettingsActivity.pointColorKey, defaultPoint));
+            showPoints = preferences.getBoolean(SettingsActivity.showPoints, true);
+
             paint.setColor(lineColor);
         }
 
@@ -116,7 +119,9 @@ public class Wallpaper extends WallpaperService {
 
                     updatePoints();
 
-                    drawPoints();
+                    if (showPoints) {
+                        drawPoints();
+                    }
 
                     drawLines();
 

@@ -2,25 +2,31 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="Background">
-        <ListPreference
+        <com.wookoouk.particleweb.ColorList
             android:dialogTitle="Background color"
             android:entries="@array/colors"
             android:entryValues="@array/colorsValues"
             android:key="bgColor"
             android:summary="Choose a background colour..."
             android:textAllCaps="true"
-            android:title="Background Colour"></ListPreference>
+            android:title="Background Colour"></com.wookoouk.particleweb.ColorList>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Particles">
-        <ListPreference
+        <com.wookoouk.particleweb.ColorList
             android:dialogTitle="Particle color"
             android:entries="@array/colors"
             android:entryValues="@array/colorsValues"
             android:key="pointColor"
             android:summary="Color of particles"
             android:textAllCaps="true"
-            android:title="Particle color"></ListPreference>
+            android:title="Particle color"></com.wookoouk.particleweb.ColorList>
+        <CheckBoxPreference
+            android:key="showPoints"
+            android:title="Show Points"
+            android:defaultValue="true"
+            ></CheckBoxPreference>
+
         <!--<ListPreference
         android:dialogTitle="Particle speed"
         android:entries="@array/speeds"

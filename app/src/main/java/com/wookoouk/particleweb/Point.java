@@ -2,12 +2,12 @@ package com.wookoouk.particleweb;
 
 import java.util.Random;
 
-/**
- * Created by martinpage on 17/01/15.
- */
 public class Point {
 
-    float x, y, dx, dy, speed;
+    int min = 1;
+    int max = 2;
+
+    float x, y, dx, dy;
 
     public Point(float x, float y) {
         this.x = x;
@@ -15,18 +15,28 @@ public class Point {
 
         Random random = new Random();
 
-        dx = (random.nextFloat() - random.nextFloat());
-        dy = (random.nextFloat() - random.nextFloat());
-        speed = (random.nextFloat() - random.nextFloat())*8;
+        int dxI = min + (int) (Math.random() * max);
+        int dyI = min + (int) (Math.random() * max);
+
+        if (random.nextBoolean()) {
+            dxI = -dxI;
+        }
+        if (random.nextBoolean()) {
+            dyI = -dyI;
+        }
+
+        dx = dxI;
+        dy = dyI;
+
     }
 
     public void translate() {
-        x += (dx * speed);
-        y += (dy * speed);
+        x += dx;
+        y += dy;
     }
 
-    public void setPosition(float x, float y){
-        this.x = x;
-        this.y = y;
-    }
+//    public void setPosition(float x, float y) {
+//        this.x = x;
+//        this.y = y;
+//    }
 }

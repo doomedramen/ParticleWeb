@@ -40,8 +40,8 @@ public class Wallpaper extends WallpaperService {
         private boolean visible = true;
         private int maxNumber = 50;
         Canvas canvas = null;
-        String defaultBG = "#9B59B6";
-        String defaultPoint = "#F1C40F";
+        String defaultBG = "#E74C3C";
+        String defaultPoint = "#ECF0F1";
         Boolean showPoints;
         int bgColor;
         int lineColor;
@@ -108,7 +108,7 @@ public class Wallpaper extends WallpaperService {
 
                     for (int i = points.size() - 1; i >= 0; i--) {
                         Point p = points.get(i);
-                        if (p.x > width || p.x < 0 || p.y > height || p.y < 0) {
+                        if (p.x > width + maxLineDist || p.x < -maxLineDist || p.y > height + maxLineDist || p.y < -maxLineDist) {
                             points.remove(p);
                         }
                     }
@@ -132,7 +132,7 @@ public class Wallpaper extends WallpaperService {
             }
             handler.removeCallbacks(drawRunner);
             if (visible) {
-                handler.postDelayed(drawRunner, 0);
+                handler.post(drawRunner);
             }
         }
 
